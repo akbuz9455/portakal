@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 75ebeb6f9fbf4c741adfb31ed07667cc
+guid: 4703e8b3347d6c74c97cdd61de8f70d5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Corkscrew Kip Up
+      name: Stumble Backwards
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 83
+      firstFrame: 18
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -48,7 +48,7 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -528,19 +528,19 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: KekosCharacter@Corkscrew Kip Up(Clone)
+    - name: KekosCharacter@Stumble Backwards(Clone)
       parentName: 
-      position: {x: 0.037657943, y: 0.09807282, z: -0.5597276}
-      rotation: {x: -0.044818792, y: 0.0000008745099, z: -0.000000057097118, w: 0.9989951}
+      position: {x: -0.04241991, y: -0.06025374, z: 0.025980268}
+      rotation: {x: -0.04481879, y: 0.00000090188877, z: -0.000000028465447, w: 0.9989952}
       scale: {x: 1, y: 1, z: 1}
     - name: Bip001
-      parentName: KekosCharacter@Corkscrew Kip Up(Clone)
+      parentName: KekosCharacter@Stumble Backwards(Clone)
       position: {x: -0, y: 0.6994, z: -0.0124}
       rotation: {x: -0.5000005, y: 0.49999958, z: 0.49999958, w: 0.5000005}
       scale: {x: 1, y: 1, z: 1}
     - name: Bip001 Pelvis
       parentName: Bip001
-      position: {x: -0.6248914, y: 0.03765793, z: -0.13765234}
+      position: {x: -0.006911706, y: -0.042419966, z: 0.07687474}
       rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
       scale: {x: 1, y: 1, z: 1}
     - name: Bip001 Spine

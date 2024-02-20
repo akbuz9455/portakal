@@ -7,8 +7,12 @@ public class InGameManager : MonoBehaviour
 {
     public static InGameManager Instance;
     public bool start;
+    public bool gameover;
     public AnimationManager animationManager;
     public SplineFollower splineFollower;
+    public GameObject inGameCam;
+    public GameObject outGameCam;
+    public GameObject refCamPoint;
 
     private void Awake()
     {
@@ -19,6 +23,11 @@ public class InGameManager : MonoBehaviour
     public void firstLoadGameData()
     {
         animationManager.GoIdle();
+
+    }
+    public void gameOver() {
+        gameover = false;
+
 
     }
     public void startGame()

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 75ebeb6f9fbf4c741adfb31ed07667cc
+guid: d4beef3f44487734694b65bb6ac35ee1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Corkscrew Kip Up
+      name: Running Forward Flip (2) 1
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 83
+      firstFrame: 4.6
+      lastFrame: 28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -528,19 +528,19 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: KekosCharacter@Corkscrew Kip Up(Clone)
+    - name: KekosCharacter@Running Forward Flip (2) 1(Clone)
       parentName: 
-      position: {x: 0.037657943, y: 0.09807282, z: -0.5597276}
-      rotation: {x: -0.044818792, y: 0.0000008745099, z: -0.000000057097118, w: 0.9989951}
+      position: {x: 0.053098217, y: -0.0755856, z: -0.04491759}
+      rotation: {x: -0.044818792, y: 0.00000087022755, z: -0.000000040851024, w: 0.9989952}
       scale: {x: 1, y: 1, z: 1}
     - name: Bip001
-      parentName: KekosCharacter@Corkscrew Kip Up(Clone)
+      parentName: KekosCharacter@Running Forward Flip (2) 1(Clone)
       position: {x: -0, y: 0.6994, z: -0.0124}
       rotation: {x: -0.5000005, y: 0.49999958, z: 0.49999958, w: 0.5000005}
       scale: {x: 1, y: 1, z: 1}
     - name: Bip001 Pelvis
       parentName: Bip001
-      position: {x: -0.6248914, y: 0.03765793, z: -0.13765234}
+      position: {x: -0.008284628, y: 0.053098194, z: 0.09214497}
       rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
       scale: {x: 1, y: 1, z: 1}
     - name: Bip001 Spine

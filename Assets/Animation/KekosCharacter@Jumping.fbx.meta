@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 75ebeb6f9fbf4c741adfb31ed07667cc
+guid: 7abec16260fdf884d8953dd695508da8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Corkscrew Kip Up
+      name: Jumping
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 83
+      firstFrame: 3.4
+      lastFrame: 50.6
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -47,12 +47,12 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 1
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
-      heightFromFeet: 0
+      heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
@@ -528,19 +528,19 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: KekosCharacter@Corkscrew Kip Up(Clone)
+    - name: KekosCharacter@Jumping(Clone)
       parentName: 
-      position: {x: 0.037657943, y: 0.09807282, z: -0.5597276}
-      rotation: {x: -0.044818792, y: 0.0000008745099, z: -0.000000057097118, w: 0.9989951}
+      position: {x: 0.041620754, y: -0.06745064, z: 0.043693155}
+      rotation: {x: -0.04481879, y: 0.000000883927, z: -0.000000049667868, w: 0.9989951}
       scale: {x: 1, y: 1, z: 1}
     - name: Bip001
-      parentName: KekosCharacter@Corkscrew Kip Up(Clone)
+      parentName: KekosCharacter@Jumping(Clone)
       position: {x: -0, y: 0.6994, z: -0.0124}
       rotation: {x: -0.5000005, y: 0.49999958, z: 0.49999958, w: 0.5000005}
       scale: {x: 1, y: 1, z: 1}
     - name: Bip001 Pelvis
       parentName: Bip001
-      position: {x: -0.6248914, y: 0.03765793, z: -0.13765234}
+      position: {x: -0.0075561665, y: 0.04162074, z: 0.084042676}
       rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
       scale: {x: 1, y: 1, z: 1}
     - name: Bip001 Spine
