@@ -1,29 +1,89 @@
 fileFormatVersion: 2
 guid: 0b92ddd38f020b547b66206b7bf9a6e0
 ModelImporter:
-  serializedVersion: 21202
+  serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: bin1
+    second: {fileID: 2100000, guid: cb06946fee67b430b83b3b94446cde5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: 8473e5b041a534400b40307227c2c7a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn2
+    second: {fileID: 2100000, guid: 6e06e3d5dc34c4b189a4e45665747ad5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn3
+    second: {fileID: 2100000, guid: 7ce4953f3754d439fb267160246f02df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn4
+    second: {fileID: 2100000, guid: ea1c4cb2a48f94a13998c08a3caa5128, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn5
+    second: {fileID: 2100000, guid: 0f6c3eaec40e04fe19123f604999ecee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: glas
-    second: {fileID: 2100000, guid: 617af830489cb9041bc2be27296de2a2, type: 2}
+    second: {fileID: 2100000, guid: ee2a75588d3774bbfac38a7afb684bb7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: papier
-    second: {fileID: 2100000, guid: 617af830489cb9041bc2be27296de2a2, type: 2}
+    second: {fileID: 2100000, guid: ced63e209556846bd88696ab73ac51d7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: restmull
-    second: {fileID: 2100000, guid: 617af830489cb9041bc2be27296de2a2, type: 2}
+    second: {fileID: 2100000, guid: bbe514aa639a54d7a98f0b8c0ce17216, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: verpackung
-    second: {fileID: 2100000, guid: 617af830489cb9041bc2be27296de2a2, type: 2}
+    second: {fileID: 2100000, guid: e322477c75df546329b794cc624dd54a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 1fc7d660064327.5a3a5a50d64a5
+    second: {fileID: 2800000, guid: 1c6f5ac18ed8e4c0f9e01e0fca573007, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: altpapier
+    second: {fileID: 2800000, guid: 7ac1d9b906f5c473981f6afa7130bf14, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: alttglas
+    second: {fileID: 2800000, guid: aff86104bf94f4db6afd031563d6f610, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: black_plastic_texture_by_shadowrunner27_d14ga9v-fullview
+    second: {fileID: 2800000, guid: f9cf96e9b52b04c9f813158a47014e0a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: restmull
+    second: {fileID: 2800000, guid: ebc40085eb3334aa2abbd43dd40be417, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: verpackugen
+    second: {fileID: 2800000, guid: b589fd3d1291c438795409ef813ccb46, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -60,6 +120,7 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -87,6 +148,7 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -119,6 +181,8 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
