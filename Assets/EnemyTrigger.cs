@@ -10,10 +10,22 @@ public class EnemyTrigger : MonoBehaviour
 
     public float distance = 5f; // Geriye doðru hareket edilecek mesafe
     public float duration = 1f; // Hareketin süresi
+    public bool isBus;
+    public bool isTree;
     void MoveCharacterBackwards(Transform characters)
     {
         Vector3 backwards = transform.forward * distance; // Karakterin tam tersi yönde bir vektör oluþtur
         characters.transform.DOMove(transform.position + backwards, duration); // DOTween ile bu pozisyona doðru hareketi baþlat
+    }
+    void MoveBusBackwards(Transform characters)
+    {
+       Vector3 backwards = -transform.up * (distance/2); // Karakterin tam tersi yönde bir vektör oluþtur
+        transform.DOMove(transform.position + backwards, duration / 2).OnComplete(() =>
+        {
+
+            transform.DOShakeRotation(5, 1, 1, 2);
+
+        }); 
     }
     public void Cam2Active()
     {
@@ -24,6 +36,11 @@ public class EnemyTrigger : MonoBehaviour
     {
         if (other.tag=="Player")
         {
+            transform.DOKill();
+            if (isBus)
+            {
+                MoveBusBackwards(transform);
+            }
             Debug.Log("Player Geldi");
             GameObject parentObj = other.transform.parent.gameObject;
             parentObj.transform.GetComponent<SplineFollower>().followSpeed = 0;
