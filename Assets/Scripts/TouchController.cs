@@ -28,7 +28,12 @@ public class TouchController : MonoBehaviour
     {
         HandleSwipeInput();
     }
+    public void TEST()
+    {
+        Debug.Log("kayma bitti");
 
+        //   FullBodyCollider.enabled = true;
+    }
     private void HandleSwipeInput()
     {
         if (Input.touchCount > 0)

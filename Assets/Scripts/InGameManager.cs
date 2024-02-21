@@ -25,8 +25,9 @@ public class InGameManager : MonoBehaviour
         animationManager.GoIdle();
 
     }
-    public void gameOver() {
-        gameover = false;
+    public void EndGame() {
+        gameover = true;
+        animationManager.GoFail();
 
 
     }

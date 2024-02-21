@@ -34,7 +34,7 @@ public class EnemyTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag=="Player")
+        if (other.tag=="Player" && !InGameManager.Instance.gameover)
         {
             transform.DOKill();
             if (isBus)
@@ -42,12 +42,21 @@ public class EnemyTrigger : MonoBehaviour
                 MoveBusBackwards(transform);
             }
             Debug.Log("Player Geldi");
+            if (other.transform.parent!=null)
+            {
+
+            }
+            InGameManager.Instance.EndGame();
+            if (other.transform.parent==null)
+            {
+                return;
+            }
             GameObject parentObj = other.transform.parent.gameObject;
             parentObj.transform.GetComponent<SplineFollower>().followSpeed = 0;
             parentObj.transform.GetComponent<SplineFollower>().enabled = false;
             other.transform.SetParent(null);
            
-            InGameManager.Instance.animationManager.GoFail();
+            
             MoveCharacterBackwards(parentObj.transform);
             Invoke("Cam2Active", .35f);
 

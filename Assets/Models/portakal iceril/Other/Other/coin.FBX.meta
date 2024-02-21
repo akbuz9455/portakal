@@ -3,52 +3,7 @@ guid: 9bddfda111ed1ad479ee25afcf4729fd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #85047
-    second: {fileID: 2100000, guid: b7c8a5e7c4170854b8532b424a43edf5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #86032
-    second: {fileID: 2100000, guid: 91f1412452fc26a43923b779dec0f0b7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #86240
-    second: {fileID: 2100000, guid: 278d303410b68d64cb0fb11e2985944f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #86936
-    second: {fileID: 2100000, guid: 7bedb93b4598aa44c8ef8e4f7f5dce81, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #86937
-    second: {fileID: 2100000, guid: 36012abd67453a44f84eb0ae42f91e6c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #86938
-    second: {fileID: 2100000, guid: 6826ec1f375108e4e87b33dbde0bcd5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #86979
-    second: {fileID: 2100000, guid: cb967d0fe38971949a5aa31261fc0303, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bridge
-    second: {fileID: 2100000, guid: 84fcdef239b6a8748b8427b5893782b4, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Coin2_BaseColor
-    second: {fileID: 2800000, guid: f4ada0eaebba87041a140f7963d7e24b, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
