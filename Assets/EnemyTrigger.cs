@@ -22,16 +22,17 @@ public class EnemyTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag=="Player"&& !InGameManager.Instance.gameover)
+        if (other.tag=="Player")
         {
             Debug.Log("Player Geldi");
-            other.transform.GetChild(0).transform.SetParent(null);
-            other.transform.GetComponent<SplineFollower>().followSpeed = 0;
-            other.transform.GetComponent<SplineFollower>().enabled = false;
+            GameObject parentObj = other.transform.parent.gameObject;
+            parentObj.transform.GetComponent<SplineFollower>().followSpeed = 0;
+            parentObj.transform.GetComponent<SplineFollower>().enabled = false;
+            other.transform.SetParent(null);
+           
             InGameManager.Instance.animationManager.GoFail();
-            MoveCharacterBackwards(other.transform);
-           // InGameManager.Instance.inGameCam.GetComponent<CinemachineVirtualCamera>().LookAtTargetAttachment(transform.gameObject);
-          Invoke("Cam2Active", .35f);
+            MoveCharacterBackwards(parentObj.transform);
+            Invoke("Cam2Active", .35f);
 
 
         }
