@@ -9,7 +9,7 @@ public class GoldTrigger : MonoBehaviour
     private void Awake()
     {
         particles = transform.GetChild(0).gameObject;
-        transform.GetChild(0).parent = null;
+      
     }
     private void Start()
     {
@@ -24,7 +24,7 @@ public class GoldTrigger : MonoBehaviour
         if (other.transform.tag=="Player") {
             collected=true;
             InGameManager.Instance.puan++;
-
+            transform.GetChild(0).parent = null;
             particles.GetComponent<ParticleSystem>().Play();
             transform.DOScale(Vector3.zero,.10f).SetEase(Ease.OutSine);
         }

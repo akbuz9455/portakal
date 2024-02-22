@@ -9,6 +9,8 @@ public class InGameManager : MonoBehaviour
     public bool start;
     public bool gameover;
     public AnimationManager animationManager;
+    public CharacterManager characterManager;
+    public MagnetSystem magnetSystem;
     public SplineFollower splineFollower;
     public GameObject inGameCam;
     public GameObject outGameCam;
