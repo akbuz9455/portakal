@@ -1,18 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class GoldTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool collected;
+    public GameObject particles;
+    private void Awake()
     {
-        
+        particles = transform.GetChild(0).gameObject;
+        transform.GetChild(0).parent = null;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+       
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (InGameManager.Instance.gameover|| collected) return;
+
+
+        if (other.transform.tag=="Player") {
+            collected=true;
+            InGameManager.Instance.puan++;
+
+            particles.GetComponent<ParticleSystem>().Play();
+            transform.DOScale(Vector3.zero,.10f).SetEase(Ease.OutSine);
+        }
     }
 }

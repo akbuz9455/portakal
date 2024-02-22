@@ -13,6 +13,7 @@ public class InGameManager : MonoBehaviour
     public GameObject inGameCam;
     public GameObject outGameCam;
     public GameObject refCamPoint;
+    public int puan;
 
     private void Awake()
     {
