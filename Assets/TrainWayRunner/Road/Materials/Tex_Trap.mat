@@ -40,6 +40,6 @@ Material:
     - _Emission: 1
     - _Shininess: 0.669
     m_Colors:
-    - _Color: {r: 0.6509434, g: 0.41638455, b: 0.31011927, a: 1}
+    - _Color: {r: 0.6320754, g: 0.40383738, b: 0.30113026, a: 1}
     - _SpecColor: {r: 1, g: 0.85406935, b: 0, a: 1}
   m_BuildTextureStacks: []
