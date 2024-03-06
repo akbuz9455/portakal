@@ -8,6 +8,7 @@ namespace Dreamteck.Splines
     [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(MeshRenderer))]
     [AddComponentMenu("Dreamteck/Splines/Users/Spline Mesh")]
+    
     public partial class SplineMesh : MeshGenerator
     {
         //Mesh data
@@ -16,12 +17,13 @@ namespace Dreamteck.Splines
         private List<Channel> _channels = new List<Channel>();
         private bool _useLastResult = false;
         private List<TS_Mesh> _combineMeshes = new List<TS_Mesh>();
-
+        public bool inCollectable;
         protected override string meshName => "Custom Mesh";
 
         private Matrix4x4 _vertexMatrix = new Matrix4x4();
         private Matrix4x4 _normalMatrix = new Matrix4x4();
         private SplineSample _lastResult = new SplineSample(), _modifiedResult = new SplineSample();
+       
 
         protected override void Awake()
         {
@@ -79,6 +81,8 @@ namespace Dreamteck.Splines
 
         public Channel GetChannel(int index)
         {
+           
+
             return _channels[index];
         }
 
@@ -87,6 +91,38 @@ namespace Dreamteck.Splines
         {
             base.BuildMesh();
             Generate();
+        }
+
+        public List<Transform> GetChannelMeshTransforms(int channelIndex)
+        {
+            List<Transform> meshTransforms = new List<Transform>();
+
+            if (channelIndex < 0 || channelIndex >= _channels.Count)
+            {
+                Debug.LogError("Channel index is out of range.");
+                return meshTransforms;
+            }
+
+            Channel channel = _channels[channelIndex];
+            GameObject parentObject = new GameObject("Channel_" + channel.name); // Ana GameObject oluþtur
+            double step = 1.0 / Mathf.Max(channel.count - 1, 1);
+
+            for (int i = 0; i < channel.count; i++)
+            {
+                double t = DMath.Lerp(channel.clipFrom, channel.clipTo, i * step);
+                Evaluate(t, ref evalResult);
+                ModifySample(ref evalResult);
+
+                GameObject meshObj = new GameObject("MeshTransform_" + i);
+                meshObj.transform.position = evalResult.position + evalResult.right * offset.x + evalResult.up * offset.y + evalResult.forward * offset.z;
+                meshObj.transform.rotation = Quaternion.LookRotation(evalResult.forward, evalResult.up);
+                meshObj.transform.SetParent(parentObject.transform); // Mesh GameObject'ini ana GameObject'in altýna yerleþtir
+                meshObj.SetActive(false); // Mesh GameObject'ini gizle
+
+                meshTransforms.Add(meshObj.transform);
+            }
+
+            return meshTransforms;
         }
 
         private void Generate()
