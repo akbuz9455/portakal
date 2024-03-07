@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.EditorTools;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InGameManager : MonoBehaviour
 {
@@ -42,47 +43,86 @@ public class InGameManager : MonoBehaviour
         yolengelsol = yol1engelsplinemesh.GetChannelMeshTransforms(1);
         yolengelsag = yol1engelsplinemesh.GetChannelMeshTransforms(2);
 
-        OffSetForEnemy(yolengelsol,leftOffSet);
-        OffSetForEnemy(yolengelsol, rightOffSet);
-
-        YerlestirVeAktifDurumuAyarla(yolengelsol);
-        YerlestirVeAktifDurumuAyarla(yolengelsag);
         YerlestirVeAktifDurumuAyarla(yolengelorta);
-
+        YerlestirVeAktifDurumuAyarla(yolengelsag, 1);
+        YerlestirVeAktifDurumuAyarla(yolengelsol, 2);
     }
 
-    void OffSetForEnemy(List<Transform> ofsetObj,float offSet)
-    {
-
-        foreach (var item in ofsetObj)
-        {
-            Debug.Log("item transfer position :"+item.transform.position);
-            item.transform.localPosition=item.transform.localPosition + item.transform.right * offSet;
-            Debug.Log("item new transfer position :" + item.transform.position);
-        }
-    }
-
-    void YerlestirVeAktifDurumuAyarla(List<Transform> engel)
+    void YerlestirVeAktifDurumuAyarla(List<Transform> engel,int localPos=0)
     {
         foreach (var engelTransform in engel)
         {
+          
             GameObject engelObjesi = GetKullanilmayanEngel();
             if (engelObjesi != null) // Eðer kullanýlabilir bir engel varsa
             {
-                engelObjesi.transform.position = engelTransform.localPosition;
-                engelObjesi.transform.rotation = engelTransform.rotation;
+              
+                if (localPos==0)
+                {
+                    engelObjesi.transform.position = engelTransform.localPosition;
+                    engelObjesi.transform.rotation = engelTransform.rotation;
+                }
+                else if (localPos==1) //right
+                {
+                    engelObjesi.transform.position = engelTransform.localPosition + engelTransform.transform.right * rightOffSet;
+                    engelObjesi.transform.rotation = engelTransform.rotation;
+                }
+                else if (localPos==2)//left
+                {
+                    engelObjesi.transform.position = engelTransform.localPosition + engelTransform.transform.right * leftOffSet;
+                    engelObjesi.transform.rotation = engelTransform.rotation;
+
+                }
                 engelObjesi.SetActive(true);
             }
+       
+
+           
+
         }
     }
 
     GameObject GetKullanilmayanEngel()
     {
-        foreach (var engel in poolManager.engelNo1)
+        int rdmEngel = Random.Range(0,4);
+        if (rdmEngel==0)
         {
-            if (!engel.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+            foreach (var engel in poolManager.engelNo1)
             {
-                return engel; // Bu engeli döndür
+                if (!engel.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+                {
+                    return engel; // Bu engeli döndür
+                }
+            }
+        }
+        else if (rdmEngel == 1)
+        {
+            foreach (var engel in poolManager.engelNo2)
+            {
+                if (!engel.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+                {
+                    return engel; // Bu engeli döndür
+                }
+            }
+        }
+        else if (rdmEngel == 2)
+        {
+            foreach (var engel in poolManager.engelNo3)
+            {
+                if (!engel.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+                {
+                    return engel; // Bu engeli döndür
+                }
+            }
+        }
+        else if (rdmEngel == 3)
+        {
+            foreach (var engel in poolManager.engelNo4Agac)
+            {
+                if (!engel.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+                {
+                    return engel; // Bu engeli döndür
+                }
             }
         }
         return null; // Eðer tüm engeller kullanýlýyorsa, null döndür
