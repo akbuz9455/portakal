@@ -1,10 +1,7 @@
-using Cysharp.Threading.Tasks;
 using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.EditorTools;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class InGameManager : MonoBehaviour
 {
@@ -32,20 +29,14 @@ public class InGameManager : MonoBehaviour
 
     private void Awake()
     {
-     //   Application.targetFrameRate = 30;
+       Application.targetFrameRate = 30;
         Instance = this;
         firstLoadGameData();
 
     }
     private void Start()
     {
-        yolengelorta = yol1engelsplinemesh.GetChannelMeshTransforms(0);
-        yolengelsol = yol1engelsplinemesh.GetChannelMeshTransforms(1);
-        yolengelsag = yol1engelsplinemesh.GetChannelMeshTransforms(2);
-
-        YerlestirVeAktifDurumuAyarla(yolengelorta);
-        YerlestirVeAktifDurumuAyarla(yolengelsag, 1);
-        YerlestirVeAktifDurumuAyarla(yolengelsol, 2);
+       
     }
 
     void YerlestirVeAktifDurumuAyarla(List<Transform> engel,int localPos=0)
