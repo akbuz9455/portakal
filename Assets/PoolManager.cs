@@ -9,7 +9,7 @@ public class PoolManager : MonoBehaviour
     public List<GameObject> engelNo2;
     public List<GameObject> engelNo3;
     public List<GameObject> engelNo4Agac;
-
+    public List<GameObject> altin;
     void Start()
     {
         

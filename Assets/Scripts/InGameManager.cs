@@ -24,8 +24,21 @@ public class InGameManager : MonoBehaviour
     public List<Transform> yolengelsol;
     public List<Transform> yolengelorta;
     public List<Transform> yolengelsag;
+
+    [SerializeField]
+    public SplineMesh yol1altinsplinemesh;
+    public List<Transform> yolAltin;
+
+
+    public List<GameObject> engelSave;
+    public List<GameObject> goldSave;
+
+    public GameObject engelSaveParentLevel1;
+    public GameObject goldSaveParentLevel1;
+
     public float rightOffSet;
     public float leftOffSet;
+    public float upOffSetForGold;
 
     private void Awake()
     {
@@ -34,49 +47,119 @@ public class InGameManager : MonoBehaviour
         firstLoadGameData();
 
     }
+ 
     private void Start()
     {
-       
+        //   yolengelorta = yol1engelsplinemesh.GetChannelMeshTransforms(0);
+        /// yolengelsol = yol1engelsplinemesh.GetChannelMeshTransforms(1);
+        // yolengelsag = yol1engelsplinemesh.GetChannelMeshTransforms(2);
+
+        //YerlestirVeAktifDurumuAyarla(yolengelorta);
+        //YerlestirVeAktifDurumuAyarla(yolengelsag, 1);
+        //YerlestirVeAktifDurumuAyarla(yolengelsol, 2);
+
+        //        yolAltin = yol1altinsplinemesh.GetChannelMeshTransforms(0);
+        //      YerlestirVeAktifDurumuAyarla(yolAltin,0,true);
+        //    YerlestirVeAktifDurumuAyarla(yolAltin, 1, true);
+        //  YerlestirVeAktifDurumuAyarla(yolAltin, 2, true);
+
+
     }
 
-    void YerlestirVeAktifDurumuAyarla(List<Transform> engel,int localPos=0)
+    void YerlestirVeAktifDurumuAyarla(List<Transform> engel, int localPos = 0, bool isGold = false)
     {
         foreach (var engelTransform in engel)
         {
-          
-            GameObject engelObjesi = GetKullanilmayanEngel();
+            GameObject engelObjesi;
+            if (isGold == true)
+            {
+                engelObjesi = GetKullanilmayanAltin();
+            }
+            else
+            {
+                engelObjesi = GetKullanilmayanEngel();
+            }
+
             if (engelObjesi != null) // Eðer kullanýlabilir bir engel varsa
             {
-              
-                if (localPos==0)
+
+                if (localPos == 0)
                 {
                     engelObjesi.transform.position = engelTransform.localPosition;
                     engelObjesi.transform.rotation = engelTransform.rotation;
                 }
-                else if (localPos==1) //right
+                else if (localPos == 1) //right
                 {
                     engelObjesi.transform.position = engelTransform.localPosition + engelTransform.transform.right * rightOffSet;
                     engelObjesi.transform.rotation = engelTransform.rotation;
                 }
-                else if (localPos==2)//left
+                else if (localPos == 2)//left
                 {
                     engelObjesi.transform.position = engelTransform.localPosition + engelTransform.transform.right * leftOffSet;
                     engelObjesi.transform.rotation = engelTransform.rotation;
 
                 }
-                engelObjesi.SetActive(true);
-            }
-       
 
-           
+                engelObjesi.SetActive(true);
+                if (isGold)
+                {
+                    //engelObjesi.transform.position = engelTransform.position + (engelTransform.transform.up * upOffSetForGold);
+                }
+                if (isGold)
+                {
+                    //engelObjesi.transform.position = engelTransform.position + (engelTransform.transform.up * upOffSetForGold);
+
+                }
+
+
+
+
+
+            }
+            if (isGold)
+            {
+                goldSave.Add(engelObjesi);
+                if (engelObjesi != null)
+                {
+                    engelObjesi.transform.SetParent(goldSaveParentLevel1.transform);
+
+                }
+            }
+            else
+            {
+                engelSave.Add(engelObjesi);
+                if (engelObjesi != null)
+                {
+                    engelObjesi.transform.SetParent(engelSaveParentLevel1.transform);
+
+                }
+            }
+
+
+
 
         }
+    }
+    GameObject GetKullanilmayanAltin()
+    {
+
+        foreach (var coin in poolManager.altin)
+        {
+            if (!coin.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+            {
+                return coin; // Bu engeli döndür
+            }
+        }
+
+
+        Debug.Log("Tekrar Engel Arandý");
+        return null; // Eðer tüm engeller kullanýlýyorsa, null döndür
     }
 
     GameObject GetKullanilmayanEngel()
     {
-        int rdmEngel = Random.Range(0,4);
-        if (rdmEngel==0)
+        int rdmEngel = Random.Range(0, 11);
+        if (rdmEngel > -1 && rdmEngel <= 3)
         {
             foreach (var engel in poolManager.engelNo1)
             {
@@ -86,7 +169,7 @@ public class InGameManager : MonoBehaviour
                 }
             }
         }
-        else if (rdmEngel == 1)
+        else if (rdmEngel > 3 && rdmEngel <= 6)
         {
             foreach (var engel in poolManager.engelNo2)
             {
@@ -96,7 +179,7 @@ public class InGameManager : MonoBehaviour
                 }
             }
         }
-        else if (rdmEngel == 2)
+        else if (rdmEngel > 6 && rdmEngel <= 9)
         {
             foreach (var engel in poolManager.engelNo3)
             {
@@ -106,7 +189,7 @@ public class InGameManager : MonoBehaviour
                 }
             }
         }
-        else if (rdmEngel == 3)
+        else if (rdmEngel > 9)
         {
             foreach (var engel in poolManager.engelNo4Agac)
             {
@@ -116,8 +199,11 @@ public class InGameManager : MonoBehaviour
                 }
             }
         }
-        return null; // Eðer tüm engeller kullanýlýyorsa, null döndür
+
+        Debug.Log("Tekrar Engel Arandý");
+        return GetKullanilmayanEngel(); // Eðer tüm engeller kullanýlýyorsa, null döndür
     }
+
     public void firstLoadGameData()
     {
         animationManager.GoIdle();
