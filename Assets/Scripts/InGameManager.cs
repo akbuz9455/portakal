@@ -42,21 +42,23 @@ public class InGameManager : MonoBehaviour
 
     private void Awake()
     {
-       Application.targetFrameRate = 30;
+        
+      
         Instance = this;
         firstLoadGameData();
-
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
  
     private void Start()
     {
-        //   yolengelorta = yol1engelsplinemesh.GetChannelMeshTransforms(0);
-        /// yolengelsol = yol1engelsplinemesh.GetChannelMeshTransforms(1);
-        // yolengelsag = yol1engelsplinemesh.GetChannelMeshTransforms(2);
+          //yolengelorta = yol1engelsplinemesh.GetChannelMeshTransforms(0);
+        // yolengelsol = yol1engelsplinemesh.GetChannelMeshTransforms(1);
+         //yolengelsag = yol1engelsplinemesh.GetChannelMeshTransforms(2);
 
-        //YerlestirVeAktifDurumuAyarla(yolengelorta);
-        //YerlestirVeAktifDurumuAyarla(yolengelsag, 1);
-        //YerlestirVeAktifDurumuAyarla(yolengelsol, 2);
+     //   YerlestirVeAktifDurumuAyarla(yolengelorta);
+       // YerlestirVeAktifDurumuAyarla(yolengelsag, 1);
+       // YerlestirVeAktifDurumuAyarla(yolengelsol, 2);
 
         //        yolAltin = yol1altinsplinemesh.GetChannelMeshTransforms(0);
         //      YerlestirVeAktifDurumuAyarla(yolAltin,0,true);

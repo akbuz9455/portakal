@@ -68,12 +68,10 @@ public class TouchController : MonoBehaviour
         {
             if (swipeVertical > swipeSensitivity && !isJumping && !isFalling) // Yukarı swipe hassasiyeti
             {
-                Debug.Log("girdi yukarı zıpla");
                 StartJump();
             }
             else if (swipeVertical < -swipeSensitivity && isJumping) // Aşağı swipe hassasiyeti
             {
-                Debug.LogWarning("Girdi aşağı swing");
                 // Zıplama tweenini durdur
                 transform.DOKill();
                 // Aşağı inme tweenini başlat
@@ -91,7 +89,6 @@ public class TouchController : MonoBehaviour
 
             if (swipeVertical < swipeSensitivity && !isJumping && !isFalling) // Yukarı swipe hassasiyeti
             {
-                Debug.Log("girdi yukarı zıpla");
                 animManager.GoFlip();
                 Invoke("GoRunDelay",0.1f);
 
