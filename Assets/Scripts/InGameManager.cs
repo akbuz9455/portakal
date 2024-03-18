@@ -46,7 +46,7 @@ public class InGameManager : MonoBehaviour
       
         Instance = this;
         firstLoadGameData();
-        QualitySettings.vSyncCount = 0;
+         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
     }
  
@@ -82,7 +82,7 @@ public class InGameManager : MonoBehaviour
                 engelObjesi = GetKullanilmayanEngel();
             }
 
-            if (engelObjesi != null) // Eðer kullanýlabilir bir engel varsa
+            if (engelObjesi != null) // E?er kullan?labilir bir engel varsa
             {
 
                 if (localPos == 0)
@@ -147,15 +147,15 @@ public class InGameManager : MonoBehaviour
 
         foreach (var coin in poolManager.altin)
         {
-            if (!coin.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+            if (!coin.activeInHierarchy) // E?er engel aktif de?ilse, kullan?lmayan bir engeldir
             {
-                return coin; // Bu engeli döndür
+                return coin; // Bu engeli d?nd?r
             }
         }
 
 
-        Debug.Log("Tekrar Engel Arandý");
-        return null; // Eðer tüm engeller kullanýlýyorsa, null döndür
+        Debug.Log("Tekrar Engel Arand?");
+        return null; // E?er t?m engeller kullan?l?yorsa, null d?nd?r
     }
 
     GameObject GetKullanilmayanEngel()
@@ -165,9 +165,9 @@ public class InGameManager : MonoBehaviour
         {
             foreach (var engel in poolManager.engelNo1)
             {
-                if (!engel.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+                if (!engel.activeInHierarchy) // E?er engel aktif de?ilse, kullan?lmayan bir engeldir
                 {
-                    return engel; // Bu engeli döndür
+                    return engel; // Bu engeli d?nd?r
                 }
             }
         }
@@ -175,9 +175,9 @@ public class InGameManager : MonoBehaviour
         {
             foreach (var engel in poolManager.engelNo2)
             {
-                if (!engel.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+                if (!engel.activeInHierarchy) // E?er engel aktif de?ilse, kullan?lmayan bir engeldir
                 {
-                    return engel; // Bu engeli döndür
+                    return engel; // Bu engeli d?nd?r
                 }
             }
         }
@@ -185,9 +185,9 @@ public class InGameManager : MonoBehaviour
         {
             foreach (var engel in poolManager.engelNo3)
             {
-                if (!engel.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+                if (!engel.activeInHierarchy) // E?er engel aktif de?ilse, kullan?lmayan bir engeldir
                 {
-                    return engel; // Bu engeli döndür
+                    return engel; // Bu engeli d?nd?r
                 }
             }
         }
@@ -195,15 +195,15 @@ public class InGameManager : MonoBehaviour
         {
             foreach (var engel in poolManager.engelNo4Agac)
             {
-                if (!engel.activeInHierarchy) // Eðer engel aktif deðilse, kullanýlmayan bir engeldir
+                if (!engel.activeInHierarchy) // E?er engel aktif de?ilse, kullan?lmayan bir engeldir
                 {
-                    return engel; // Bu engeli döndür
+                    return engel; // Bu engeli d?nd?r
                 }
             }
         }
 
-        Debug.Log("Tekrar Engel Arandý");
-        return GetKullanilmayanEngel(); // Eðer tüm engeller kullanýlýyorsa, null döndür
+        Debug.Log("Tekrar Engel Arand?");
+        return GetKullanilmayanEngel(); // E?er t?m engeller kullan?l?yorsa, null d?nd?r
     }
 
     public void firstLoadGameData()
