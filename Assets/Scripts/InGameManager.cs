@@ -46,8 +46,8 @@ public class InGameManager : MonoBehaviour
       
         Instance = this;
         firstLoadGameData();
-         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 30;
     }
  
     private void Start()
