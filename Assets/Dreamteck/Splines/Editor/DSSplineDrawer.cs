@@ -120,6 +120,7 @@ namespace Dreamteck.Splines.Editor
                 int pointIndex = 0;
                 for (int i = 1; i < comp.sampleCount; i++)
                 {
+                  
                     positions[pointIndex] = prevPoint;
                     pointIndex++;
                     positions[pointIndex] = comp[i].position;

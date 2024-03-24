@@ -46,10 +46,10 @@ public class InGameManager : MonoBehaviour
       
         Instance = this;
         firstLoadGameData();
-        QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 30;
+
     }
- 
+
     private void Start()
     {
           //yolengelorta = yol1engelsplinemesh.GetChannelMeshTransforms(0);
