@@ -6,6 +6,7 @@ public class PerformanceTrigger : MonoBehaviour
 {
     public bool isBaslangic;
     public bool isOrta;
+    public bool isOrtaDevam;
     public int level;
 
 
@@ -44,12 +45,29 @@ public class PerformanceTrigger : MonoBehaviour
                 {
                     PerformanceManager.Instance.level2Orta();
                 }
+                else if (isOrtaDevam)
+                {
+                    PerformanceManager.Instance.level2OrtaDevam();
+                    PerformanceManager.Instance.level3Start();
+                }
                 else
                 {
                     PerformanceManager.Instance.level2DevamGo();
 
                 }
 
+            }
+            else if (level==3)
+            {
+
+                if (isBaslangic)
+                {
+                    PerformanceManager.Instance.level3GirisGo();
+                }
+                if (isOrta)
+                {
+                    PerformanceManager.Instance.level2Stop();
+                }
             }
         }
     }

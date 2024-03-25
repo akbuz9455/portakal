@@ -17,6 +17,9 @@ public class PerformanceManager : MonoBehaviour
     public GameObject level2Tamamý;
     public GameObject level2Giris;
     public GameObject level2Devam1;
+    public GameObject level2Devam2;
+    public GameObject level2Orta1;
+  
 
     [Header("Level3 Performance Objects")]
 
@@ -67,6 +70,15 @@ public class PerformanceManager : MonoBehaviour
         
 
     }
+
+    public void level2OrtaDevam()
+    {
+
+        level2Orta1.SetActive(true);
+        level2Devam2.SetActive(false);
+
+
+    }
     public void level2Start()
     {
         level2Tamamý.SetActive(true);
@@ -77,6 +89,7 @@ public class PerformanceManager : MonoBehaviour
     public void level2Orta()
     {
         level2Giris.SetActive(false);
+      
     }
     public void level2DevamGo()
     {
@@ -85,4 +98,25 @@ public class PerformanceManager : MonoBehaviour
         level2Giris.SetActive(false);
         level2Devam1.SetActive(true);
     }
+
+    public void level2Stop()
+    {
+        level2Tamamý.SetActive(false);
+        level2Giris.SetActive(false);
+        level2Devam1.SetActive(false);
+
+    }
+
+
+    public void level3Start()
+    {
+        level3Tamamý.SetActive(true);
+   
+
+    }
+    public void level3GirisGo()
+    {
+        level3Giris.SetActive(true);
+    }
+    
 }
