@@ -40,6 +40,9 @@ public class InGameManager : MonoBehaviour
     public float leftOffSet;
     public float upOffSetForGold;
 
+
+    public bool isNewMap;
+
     private void Awake()
     {
         
@@ -223,4 +226,6 @@ public class InGameManager : MonoBehaviour
         splineFollower.followSpeed = 14;
         animationManager.GoRun();
     }
+
+  
 }
