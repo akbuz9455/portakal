@@ -9,10 +9,20 @@ public class PerformanceTrigger : MonoBehaviour
     public bool isOrtaDevam;
     public int level;
 
-
+    public bool loopActive;
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Player" && loopActive)
+        {
+            InGameManager.Instance.splineFollower.wrapMode = Dreamteck.Splines.SplineFollower.Wrap.Loop;
+
+        }
+        else if (other.tag == "Player" && !loopActive)
+        {
+            InGameManager.Instance.splineFollower.wrapMode = Dreamteck.Splines.SplineFollower.Wrap.Default;
+
+        }
         if (other.tag == "Player")
         {
             if (level==1)
@@ -29,7 +39,6 @@ public class PerformanceTrigger : MonoBehaviour
                 else
                 {
                     PerformanceManager.Instance.level1devamGo();
-                    InGameManager.Instance.splineFollower.wrapMode = Dreamteck.Splines.SplineFollower.Wrap.Loop;
                 }
 
             }
@@ -59,7 +68,7 @@ public class PerformanceTrigger : MonoBehaviour
             }
             else if (level==3)
             {
-
+               
                 if (isBaslangic)
                 {
                     PerformanceManager.Instance.level3GirisGo();
@@ -68,6 +77,14 @@ public class PerformanceTrigger : MonoBehaviour
                 {
                     PerformanceManager.Instance.level2Stop();
                 }
+            }
+            else if (level==4)
+            {
+                if (!isBaslangic)
+                {
+                    PerformanceManager.Instance.level3Kapat();
+                }
+
             }
         }
     }

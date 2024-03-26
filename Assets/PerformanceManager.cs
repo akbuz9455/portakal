@@ -114,6 +114,12 @@ public class PerformanceManager : MonoBehaviour
    
 
     }
+
+    public void level3Kapat()
+    {
+        level3Tamamý.SetActive(false);
+
+    }
     public void level3GirisGo()
     {
         level3Giris.SetActive(true);
