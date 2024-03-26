@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PerformanceManager : MonoBehaviour
 {
-    public static PerformanceManager Instance;
-
-
     [Header("Level1 Performance Objects")]
-    public GameObject level1Tamamý;
+ 
+    public GameObject level1;
+    public GameObject level1Road;
     public GameObject level1Giris;
-    public GameObject level1Devam1;
+    public GameObject level1GirisDevam1;
+    public GameObject level1GirisDevam2;
+    public GameObject level1GirisDevam3;
+
+
+
 
     [Header("Level2 Performance Objects")]
 
@@ -33,96 +35,32 @@ public class PerformanceManager : MonoBehaviour
     public GameObject level4Giris;
     public GameObject level4Devam1;
 
-    private void Start()
-    {
-        Instance = this;
-    }
-    public void level1devamGo()
-    {
-        level1Giris.SetActive(false);
-        level1Devam1.SetActive(true);
-      
  
-    }
 
-    public void level1OrtaGo()
+
+    public void level1AcKapat(bool isAcik)
     {
-        level2Tamamý.SetActive(false);
-    }
-
-    public void level1Start()
-    {
-        level1Giris.SetActive(true);
-        level1Devam1.SetActive(false);
-
-
-        level2Tamamý.SetActive(true);
-        level2Giris.SetActive(true);
-
-
-
-    }
-
-    public void level1Orta()
-    {
-         
-        level2Tamamý.SetActive(false);
+        level1.SetActive(isAcik);
         
-
     }
-
-    public void level2OrtaDevam()
+    public void level1StartAcKapat(bool isAcik)
     {
-
-        level2Orta1.SetActive(true);
-        level2Devam2.SetActive(false);
-
-
+        level1Giris.SetActive(isAcik);
     }
-    public void level2Start()
+    public void level1Devam1AcKapat(bool isAcik)
     {
-        level2Tamamý.SetActive(true);
-        level2Giris.SetActive(true);
-        level2Devam1.SetActive(true);
-   
+        level1GirisDevam1.SetActive(isAcik);
     }
-    public void level2Orta()
+
+    public void level1Devam2AcKapat(bool isAcik)
     {
-        level2Giris.SetActive(false);
-      
+        level1GirisDevam2.SetActive(isAcik);
     }
-    public void level2DevamGo()
+
+    public void level1Devam3AcKapat(bool isAcik)
     {
-        level1Tamamý.SetActive(false);
-        level2Tamamý.SetActive(true);
-        level2Giris.SetActive(false);
-        level2Devam1.SetActive(true);
-    }
-
-    public void level2Stop()
-    {
-        level2Tamamý.SetActive(false);
-        level2Giris.SetActive(false);
-        level2Devam1.SetActive(false);
-
+        level1GirisDevam3.SetActive(isAcik);
     }
 
 
-    public void level3Start()
-    {
-        level3Tamamý.SetActive(true);
-   
-
-    }
-
-    public void level3Kapat()
-    {
-        level3Tamamý.SetActive(false);
-
-    }
-    public void level3GirisGo()
-    {
-        level3Giris.SetActive(true);
-    }
-    
 }

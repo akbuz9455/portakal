@@ -46,7 +46,7 @@ public class InGameManager : MonoBehaviour
       
         Instance = this;
         firstLoadGameData();
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 30;
 
     }
 
@@ -220,7 +220,7 @@ public class InGameManager : MonoBehaviour
     public void startGame()
     {
         start = true;
-        splineFollower.followSpeed = 10;
+        splineFollower.followSpeed = 14;
         animationManager.GoRun();
     }
 }
