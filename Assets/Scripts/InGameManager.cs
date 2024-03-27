@@ -1,4 +1,5 @@
 using Dreamteck.Splines;
+using Dreamteck.Splines.Examples;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class InGameManager : MonoBehaviour
     public static InGameManager Instance;
     public bool start;
     public bool gameover;
+    public int level;
     public AnimationManager animationManager;
     public CharacterManager characterManager;
     public MagnetSystem magnetSystem;
@@ -18,6 +20,11 @@ public class InGameManager : MonoBehaviour
     public GameObject refCamPoint;
     public int puan;
 
+    [SerializeField]
+    public JunctionSwitch level1;
+    public JunctionSwitch level2;
+    public JunctionSwitch level3;
+    public JunctionSwitch level4;
     //Mesh data
     [SerializeField]
     public SplineMesh yol1engelsplinemesh;

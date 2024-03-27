@@ -12,8 +12,8 @@ public class EnemyTrigger : MonoBehaviour
     public float duration = 1f; // Hareketin süresi
     public bool isBus;
     public bool isTree;
-    public bool isNewMap;
-    public bool isLoopMap;
+ 
+
     void MoveCharacterBackwards(Transform characters)
     {
         Vector3 backwards = transform.forward * distance; // Karakterin tam tersi yönde bir vektör oluþtur
@@ -64,17 +64,7 @@ public class EnemyTrigger : MonoBehaviour
 
 
         }
-        if (other.tag=="Player" && isNewMap)
-        {
-            InGameManager.Instance.isNewMap = true;
-            InGameManager.Instance.characterManager.GetComponent<SplineFollower>().wrapMode = SplineFollower.Wrap.Default;
-        }
-        if (other.tag == "Player" && isLoopMap)
-        {
-            InGameManager.Instance.characterManager.GetComponent<SplineFollower>().wrapMode = SplineFollower.Wrap.Loop;
-
-            InGameManager.Instance.isNewMap = false;
-        }
+  
     }
 
 }
