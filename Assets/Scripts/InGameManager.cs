@@ -46,7 +46,7 @@ public class InGameManager : MonoBehaviour
       
         Instance = this;
         firstLoadGameData();
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 45;
 
     }
 
