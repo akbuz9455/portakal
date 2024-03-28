@@ -234,5 +234,28 @@ public class InGameManager : MonoBehaviour
         animationManager.GoRun();
     }
 
-  
+    public void baglantiDegistir(int isLevel = 0, bool isActive = true)
+    {
+        if (isLevel == 1)
+        {
+            level1.bridges[0].active = isActive;
+
+        }
+        else if (isLevel == 2)
+        {
+            level2.bridges[0].active = isActive;
+
+        }
+        else if (isLevel == 3)
+        {
+            level3.bridges[0].active = isActive;
+
+        }
+        else if (isLevel == 4)
+        {
+            level3.bridges[0].active = isActive;
+
+        }
+    }
+
 }
