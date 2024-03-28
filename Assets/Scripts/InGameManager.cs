@@ -60,20 +60,48 @@ public class InGameManager : MonoBehaviour
 
     }
 
+    public void GecisCloseLevel4(bool isActive)
+    {
+        baglantiDegistir(4, isActive);
+    }
+
+    public void baglantiDegistir(int isLevel, bool isActive)
+    {
+        if (isLevel == 1)
+        {
+            level1.bridges[0].active = isActive;
+
+        }
+        else if (isLevel == 2)
+        {
+            level2.bridges[0].active = isActive;
+
+        }
+        else if (isLevel == 3)
+        {
+            level3.bridges[0].active = isActive;
+
+        }
+        else if (isLevel == 4)
+        {
+            level4.bridges[0].active = isActive;
+
+        }
+    }
     private void Start()
     {
-          //yolengelorta = yol1engelsplinemesh.GetChannelMeshTransforms(0);
-        // yolengelsol = yol1engelsplinemesh.GetChannelMeshTransforms(1);
-         //yolengelsag = yol1engelsplinemesh.GetChannelMeshTransforms(2);
+        //       yolengelorta = yol1engelsplinemesh.GetChannelMeshTransforms(0);
+        //       yolengelsol = yol1engelsplinemesh.GetChannelMeshTransforms(1);
+        //       yolengelsag = yol1engelsplinemesh.GetChannelMeshTransforms(2);
 
-     //   YerlestirVeAktifDurumuAyarla(yolengelorta);
-       // YerlestirVeAktifDurumuAyarla(yolengelsag, 1);
-       // YerlestirVeAktifDurumuAyarla(yolengelsol, 2);
+       //        YerlestirVeAktifDurumuAyarla(yolengelorta);
+       //        YerlestirVeAktifDurumuAyarla(yolengelsag, 1);
+       //        YerlestirVeAktifDurumuAyarla(yolengelsol, 2);
 
         //        yolAltin = yol1altinsplinemesh.GetChannelMeshTransforms(0);
-        //      YerlestirVeAktifDurumuAyarla(yolAltin,0,true);
-        //    YerlestirVeAktifDurumuAyarla(yolAltin, 1, true);
-        //  YerlestirVeAktifDurumuAyarla(yolAltin, 2, true);
+        //        YerlestirVeAktifDurumuAyarla(yolAltin,0,true);
+        //        YerlestirVeAktifDurumuAyarla(yolAltin, 1, true);
+        //        YerlestirVeAktifDurumuAyarla(yolAltin, 2, true);
 
 
     }
@@ -234,28 +262,6 @@ public class InGameManager : MonoBehaviour
         animationManager.GoRun();
     }
 
-    public void baglantiDegistir(int isLevel = 0, bool isActive = true)
-    {
-        if (isLevel == 1)
-        {
-            level1.bridges[0].active = isActive;
-
-        }
-        else if (isLevel == 2)
-        {
-            level2.bridges[0].active = isActive;
-
-        }
-        else if (isLevel == 3)
-        {
-            level3.bridges[0].active = isActive;
-
-        }
-        else if (isLevel == 4)
-        {
-            level3.bridges[0].active = isActive;
-
-        }
-    }
+   
 
 }

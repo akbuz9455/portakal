@@ -60,7 +60,7 @@ public class PerformanceManager : MonoBehaviour
 
             if (level==1)
             {
-                level1Devam1AcKapat(false);
+                level1Devam1AcKapat(true);
                 level1Devam2AcKapat(false);
                 level1Devam2AcKapat(false);
             }

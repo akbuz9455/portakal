@@ -11,6 +11,7 @@ public class PerformanceTrigger : MonoBehaviour
 
     public bool loopActive;
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && loopActive)
